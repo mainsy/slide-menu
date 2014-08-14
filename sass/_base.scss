@@ -1,0 +1,79 @@
+$color-darkgrey:#494949 !default;
+$color-lightgrey:#8e8e8e !default;
+$color-lightestgrey:#f1f1f2 !default;
+$color-orange:#ed652e !default;
+$color-darkorange:#d2531f !default;
+$color-green:#00cf36 !default;
+$color-darkgreen:#00a22a !default;
+
+@mixin font-smoothing($val: antialiased) {
+	-webkit-font-smoothing: $val;
+	-moz-font-smoothing: $val;
+	-ms-font-smoothing: $val;
+	-o-font-smoothing: $val;
+}
+
+@mixin flexbox {
+	display: -webkit-box !important;
+	display: -moz-box !important;
+	display: -ms-box !important;
+	display: -o-box !important;
+	display: box !important;
+}
+
+@mixin flex-center-center {
+	@include box-orient(vertical);
+	@include box-align(center);
+	@include box-pack(center);
+}
+
+@mixin flex-left-center {
+	@include box-orient(vertical);
+	@include box-align(left);
+	@include box-pack(center);
+}
+
+@mixin flex-right-center {
+	@include box-orient(vertical);
+	@include box-align(end);
+	@include box-pack(center);
+}
+
+@mixin placeholder {
+	&::-webkit-input-placeholder {  @content; opacity:1;}
+	&:-moz-placeholder { @content; opacity:1;}
+	&::-moz-placeholder { @content; opacity:1;}
+	&:-ms-input-placeholder { @content; opacity:1;}
+}
+
+@mixin shadow($horizontal, $vertical, $blur, $spread, $color){
+	-moz-box-shadow:    $horizontal $vertical $blur $spread $color;
+	-webkit-box-shadow: $horizontal $vertical $blur $spread $color;
+	box-shadow:         $horizontal $vertical $blur $spread $color;
+}
+
+@mixin box-sizing{
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+@mixin transition($seconds){
+	-webkit-transition: $seconds ease-in-out;
+	-moz-transition: $seconds ease-in-out;
+	-o-transition: $seconds ease-in-out;
+	transition: $seconds ease-in-out;
+}
+
+@mixin rotate($degrees){
+	-webkit-transform: rotate($degrees);
+	-moz-transform: rotate($degrees);
+	-ms-transform: rotate($degrees);
+	-o-transform: rotate($degrees);
+	transform: rotate($degrees)
+}
+
+@function calc-em($target-px, $context) {
+	@return ($target-px / $context) * 1em;
+}

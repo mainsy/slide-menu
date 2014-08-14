@@ -1,0 +1,27 @@
+@import "compass";
+@import "compass/reset";
+@import "_base";
+
+*, *:after, *::before {
+	@include box-sizing;
+}
+
+html, body, #container{
+	height:100%;
+	font-family: Georgia;
+	color:$color-darkgrey;
+}
+
+a{
+	text-decoration:none;
+	color:#FFF;
+	font-weight:bold;
+	color:$color-darkgrey;
+}
+
+#container{
+	background:$color-darkgreen;
+	position:relative;
+	overflow:hidden;
+}
+
