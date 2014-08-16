@@ -3,6 +3,8 @@
 *.DS_Store
 .sass-cache
 .sass-cache/*
+*.sublime-project
+*.sublime-workspace
 
 #Visual Studio files
 *.[Oo]bj

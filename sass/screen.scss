@@ -8,6 +8,7 @@
 
 html, body, #container{
 	height:100%;
+	font-size:10px;
 	font-family: Georgia;
 	color:$color-darkgrey;
 }
@@ -19,9 +20,141 @@ a{
 	color:$color-darkgrey;
 }
 
+pre{
+	background:$color-darkgrey;
+	color:$color-lightestgrey;
+	width:90%;
+	height:400px;
+	overflow:scroll;
+	font-family:Helvetica, Arial, sans-serif
+}
+
+.comment{ color: $color-green;}
+
 #container{
 	background:$color-darkgreen;
 	position:relative;
 	overflow:hidden;
 }
 
+#wrapper{
+	position:relative;
+	height:100%;
+	width:96%;
+	float:right;
+
+	&:after{
+		position:absolute;
+		top:0;
+		right:0;
+		bottom:0;
+		width:0;
+		height:0;
+		background:rgba(0,0,0,0.4);
+		content:'';
+		opacity:0;
+		-webkit-transition: opacity ease-in-out 0.5s;
+		transition: opacity ease-in-out 0.5s;
+	}
+}
+
+#slide-menu{
+	position:absolute;
+	top:0;
+	left:0;
+	z-index:1000;
+	width:20%;
+	min-width:250px;
+	height:100%;
+	border-right:1px solid $color-lightestgrey;
+	background:$color-darkgreen;
+	-webkit-transform: translate3d(-80%, 0, 0);
+	transform: translate3d(-80%, 0, 0);
+	@include transition(0.25s);
+
+	h1{
+		font-size:calc-em(32,10);
+		font-weight:bold;
+		margin:0;
+		padding:0;
+		list-style: none;
+	}
+
+	h2{
+		font-size:calc-em(24,10);
+		font-weight:bold;
+		margin:0;
+		padding:calc-em(10,24);
+	}
+
+	a{
+		display:block;
+		padding:calc-em(10,10);
+		@include transition(0.25s);
+
+		&:hover{
+			background:rgba(0,0,0,0.5);
+			color:$color-lightestgrey;
+		}
+	}
+
+	ul{
+		width:80%;
+		float:left;
+	}
+
+	button{
+		position:absolute;
+		top:calc-em(10,10);
+		margin:calc-em(10,10);
+		border:calc-em(1,10) solid $color-lightestgrey;
+		padding:calc-em(5,10);
+		right:0;
+		color:$color-lightestgrey;
+		background:transparent;
+		outline: 0;
+		cursor:pointer;
+	
+	}
+}
+
+.menu-open{
+	#wrapper::after{
+		width:100%;
+		height:100%;
+		opacity: 1;
+	}
+
+	#slide-menu{
+		-webkit-transform: translate3d(0, 0, 0);
+		transform: translate3d(0, 0, 0);
+	}
+}
+
+.content{
+	overflow-y:scroll;
+	height:100%;
+}
+
+.inner-content{
+	position:relative;
+	@include box-sizing;
+	font-size:calc-em(16,10);
+	margin:calc-em(20,16) auto;
+	line-height:calc-em(20,16);
+	width:100%;
+	max-width:960px;
+
+	h1{
+		font-size:calc-em(32,16);
+		line-height:calc-em(32,32);
+		color:$color-lightestgrey;
+		font-weight: bold;
+		margin:calc-em(10,14) 0;
+	}
+
+	h2{
+		font-size:calc-em(24,16);
+		font-weight:bold;
+	}
+}
