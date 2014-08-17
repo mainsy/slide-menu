@@ -17,11 +17,50 @@ html, body, #container{
 	color:$color-darkgrey;
 }
 
+header{
+	background:$color-lightgrey;
+	color:$color-lightestgrey;
+	text-align:center;
+	font-weight:bold;
+	padding:calc-em(5,10);
+
+	a{color:$color-lightestgrey;}
+}
+
+h1{
+	font-size:calc-em(32,10);
+	line-height:calc-em(32,32);
+	padding:calc-em(10,32);
+	font-weight:bold;
+	margin:0;
+	list-style: none;
+	color:$color-lightgrey;
+}
+
+h2{
+	font-size:calc-em(24,10);
+	font-weight:bold;
+	margin:0;
+	padding:calc-em(10,24);
+	color:$color-lightgrey;
+}
+
+h3{
+	font-size:calc-em(16,10);
+	font-weight:bold;
+	padding:calc-em(10,16);
+	color:$color-lightgrey;
+}
+
 a{
 	text-decoration:none;
 	color:#FFF;
 	font-weight:bold;
 	color:$color-darkgrey;
+}
+
+p{
+	margin:calc-em(10,10);
 }
 
 pre{
@@ -61,14 +100,12 @@ pre{
 		position:absolute;
 		top:0;
 		right:0;
-		bottom:0;
 		width:0;
 		height:0;
 		background:rgba(0,0,0,0.4);
 		content:'';
 		opacity:0;
-		-webkit-transition: opacity ease-in-out 0.5s;
-		transition: opacity ease-in-out 0.5s;
+		@include opacity-transition(0.25s);
 	}
 }
 
@@ -79,8 +116,7 @@ pre{
 	z-index:1000;
 	width:200px;
 	height:100%;
-	-webkit-transform: translate3d(-100%, 0, 0);
-	transform: translate3d(-100%, 0, 0);
+	@include translate3d(-100%,0,0);
 	@include transition(0.25s);
 
 	&.basic-slider{
@@ -115,21 +151,8 @@ pre{
 		}
 	}
 
-	h1{
-		font-size:calc-em(32,10);
-		font-weight:bold;
-		margin:0;
-		padding:0;
-		list-style: none;
-		color:$color-lightestgrey;
-	}
-
-	h2{
-		font-size:calc-em(24,10);
-		font-weight:bold;
-		margin:0;
-		padding:calc-em(10,24);
-		color:$color-lightestgrey;
+	h1,h2{
+		color:$color-lightestgrey
 	}
 
 	a{
@@ -177,7 +200,6 @@ pre{
 			top:0;
 			right:0;
 			text-align: center;
-			line-height:calc-em(60,32);
 			-ms-transform: rotate(-90deg);
 		    -webkit-transform: rotate(-90deg);
 		    transform: rotate(-90deg);
@@ -259,20 +281,6 @@ pre{
 	font-size:calc-em(16,10);
 	line-height:calc-em(20,16);
 	width:100%;
-
-	h1{
-		font-size:calc-em(32,16);
-		line-height:calc-em(32,32);
-		color:$color-lightgrey;
-		font-weight: bold;
-		margin:calc-em(10,14) 0;
-	}
-
-	h2{
-		font-size:calc-em(24,16);
-		font-weight:bold;
-		color:$color-lightgrey;
-	}
 }
 
 article{
@@ -282,9 +290,14 @@ article{
 }
 
 footer{
+	font-size:calc-em(10,16);
 	background:$color-darkgrey;
 	color:$color-lightestgrey;
 	text-align:center;
 	@include box-sizing;
-	padding:calc-em(20, 16);
+	padding:calc-em(20,10);
+
+	a{
+		color:$color-lightestgrey;
+	}
 }
