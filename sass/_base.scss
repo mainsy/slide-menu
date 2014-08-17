@@ -5,6 +5,13 @@ $color-orange:#ed652e !default;
 $color-darkorange:#d2531f !default;
 $color-green:#00cf36 !default;
 $color-darkgreen:#00a22a !default;
+$color-red:#FF2E2E !default;
+$color-darkred:#C40000 !default;
+$color-blue:#293BFF !default;
+$color-darkblue:#000DA1 !default;
+$color-purple:#BF1CFF !default;
+$color-darkpurple:#8000B3 !default;
+
 
 @mixin font-smoothing($val: antialiased) {
 	-webkit-font-smoothing: $val;
