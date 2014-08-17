@@ -92,7 +92,23 @@ $color-darkpurple:#8000B3 !default;
 	-moz-transform: rotate($degrees);
 	-ms-transform: rotate($degrees);
 	-o-transform: rotate($degrees);
-	transform: rotate($degrees)
+	transform: rotate($degrees);
+}
+
+@mixin rotateY($degrees){
+	-webkit-transform: rotateY($degrees);
+	-moz-transform: rotateY($degrees);
+	-ms-transform: rotateY($degrees);
+	-o-transform: rotateY($degrees);
+	transform: rotateY($degrees);
+}
+
+@mixin transform-origin($x, $y, $z){
+	-webkit-transform-origin:$x $y $z;
+	-moz-transform-origin:$x $y $z;
+	-ms-transform-origin:$x $y $z;
+	-o-transform-origin:$x $y $z;
+	transform-origin:$x $y $z;
 }
 
 @function calc-em($target-px, $context) {
