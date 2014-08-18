@@ -204,14 +204,14 @@ pre {
   z-index: 1000;
   width: 200px;
   height: 100%;
-  -webkit-transform: translate3d(-100%, 0, 0);
-  -moz-transform: translate3d(-100%, 0, 0);
-  -o-transform: translate3d(-100%, 0, 0);
-  transform: translate3d(-100%, 0, 0);
   -webkit-transition: ease-in-out 0.25s;
   -moz-transition: ease-in-out 0.25s;
   -o-transition: ease-in-out 0.25s;
   transition: ease-in-out 0.25s;
+  -webkit-transform: translate3d(-100%, 0, 0);
+  -moz-transform: translate3d(-100%, 0, 0);
+  -o-transform: translate3d(-100%, 0, 0);
+  transform: translate3d(-100%, 0, 0);
 }
 /* line 122, ../sass/screen.scss */
 #slide-menu.basic-slider {
@@ -346,38 +346,25 @@ pre {
   height: 100%;
   opacity: 1;
 }
-/* line 239, ../sass/screen.scss */
-.menu-open #slide-menu.basic-slider {
+/* line 238, ../sass/screen.scss */
+.menu-open #slide-menu {
   -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
-/* line 244, ../sass/screen.scss */
-.menu-open #slide-menu.push-slider {
-  -webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
-}
-/* line 249, ../sass/screen.scss */
-.menu-open #slide-menu.scale-slider {
-  -webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
-}
-/* line 254, ../sass/screen.scss */
-.menu-open #slide-menu.rotate-slider {
-  -webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
-}
-/* line 259, ../sass/screen.scss */
+/* line 241, ../sass/screen.scss */
 .menu-open #slide-menu button::after {
   content: 'CLOSE';
 }
 
-/* line 265, ../sass/screen.scss */
+/* line 247, ../sass/screen.scss */
 .content {
   overflow-y: scroll;
   height: 100%;
 }
 
-/* line 270, ../sass/screen.scss */
+/* line 252, ../sass/screen.scss */
 .inner-content {
   position: relative;
   -moz-box-sizing: border-box;
@@ -389,14 +376,14 @@ pre {
   width: 100%;
 }
 
-/* line 278, ../sass/screen.scss */
+/* line 260, ../sass/screen.scss */
 article {
   margin: 0 auto;
   padding: 1.25em 3.75em;
   max-width: 960px;
 }
 
-/* line 284, ../sass/screen.scss */
+/* line 266, ../sass/screen.scss */
 footer {
   font-size: 0.625em;
   background: #494949;
@@ -408,7 +395,7 @@ footer {
   box-sizing: border-box;
   padding: 2em;
 }
-/* line 292, ../sass/screen.scss */
+/* line 274, ../sass/screen.scss */
 footer a {
   color: #f1f1f2;
 }

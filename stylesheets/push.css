@@ -1,4 +1,4 @@
-/* line 3, ../sass/basic.scss */
+/* line 3, ../sass/push.scss */
 *, *:after, *::before {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -6,18 +6,18 @@
   box-sizing: border-box;
 }
 
-/* line 7, ../sass/basic.scss */
+/* line 7, ../sass/push.scss */
 html, body, #container {
   height: 100%;
 }
 
-/* line 11, ../sass/basic.scss */
+/* line 11, ../sass/push.scss */
 #container {
   position: relative;
   overflow: hidden;
 }
 
-/* line 16, ../sass/basic.scss */
+/* line 16, ../sass/push.scss */
 #wrapper {
   position: relative;
   height: 100%;
@@ -28,7 +28,7 @@ html, body, #container {
   -o-transition: ease-in-out 0.25s;
   transition: ease-in-out 0.25s;
 }
-/* line 23, ../sass/basic.scss */
+/* line 23, ../sass/push.scss */
 #wrapper:after {
   position: absolute;
   top: 0;
@@ -44,7 +44,7 @@ html, body, #container {
   transition: opacity ease-in-out 0.25s;
 }
 
-/* line 36, ../sass/basic.scss */
+/* line 36, ../sass/push.scss */
 #slide-menu {
   position: absolute;
   top: 0;
@@ -62,11 +62,11 @@ html, body, #container {
   -o-transform: translate3d(-100%, 0, 0);
   transform: translate3d(-100%, 0, 0);
 }
-/* line 47, ../sass/basic.scss */
+/* line 47, ../sass/push.scss */
 #slide-menu button::after {
   content: 'MENU';
 }
-/* line 51, ../sass/basic.scss */
+/* line 51, ../sass/push.scss */
 #slide-menu .nav-bar {
   width: 60px;
   height: 100%;
@@ -76,37 +76,25 @@ html, body, #container {
   background: #FFF;
 }
 
-/* line 62, ../sass/basic.scss */
+/* line 62, ../sass/push.scss */
 .menu-open #wrapper {
-  -webkit-transform: translate3d(-100%, 0, 0);
-  -moz-transform: translate3d(-100%, 0, 0);
-  -o-transform: translate3d(-100%, 0, 0);
-  transform: translate3d(-100%, 0, 0);
+  -webkit-transform: translate3d(260px, 0, 0);
+  -moz-transform: translate3d(260px, 0, 0);
+  -o-transform: translate3d(260px, 0, 0);
+  transform: translate3d(260px, 0, 0);
 }
-/* line 66, ../sass/basic.scss */
+/* line 66, ../sass/push.scss */
 .menu-open #wrapper::after {
   width: 100%;
   height: 100%;
   opacity: 1;
 }
-/* line 72, ../sass/basic.scss */
+/* line 72, ../sass/push.scss */
 .menu-open #slide-menu {
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
-/* line 76, ../sass/basic.scss */
+/* line 76, ../sass/push.scss */
 .menu-open #slide-menu button::after {
   content: 'CLOSE';
-}
-
-/* line 82, ../sass/basic.scss */
-.content {
-  overflow-y: scroll;
-  height: 100%;
-}
-
-/* line 87, ../sass/basic.scss */
-.inner-content {
-  position: relative;
-  width: 100%;
 }

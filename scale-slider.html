@@ -39,7 +39,7 @@
                         <article>
                             <h1>Welcome to the sliding menu demo.</h1>
                             <p>This is a basic example of a sliding menu/navigation. There are no media queries in the demo, so the navigation may not look perfect at all resolutions.</p>
-                            <p>I've put together an example with the absolute minimum markup and styling.</p>
+                            <p>I've put together some examples with the absolute minimum markup and styling. The only difference between them is some slight style tweeks that greatly change the slide effect.</p>
                             <h2>The HTML</h2>
                             <p>First things first, the basic markup structure.</p>
                             <pre>
@@ -70,9 +70,9 @@
                             <pre>
                                 <code>
                                     @mixin box-sizing{
-                                        -moz-box-sizing: border-box;
                                         -webkit-box-sizing: border-box;
-                                        -ms-box-sizing: border-box;
+                                        -moz-box-sizing: border-box;
+                                        -o-box-sizing: border-box;
                                         box-sizing: border-box;
                                     }
 
@@ -104,29 +104,35 @@
                                         -o-transform: rotate($degrees);
                                         transform: rotate($degrees)
                                     }
+
+                                    @mixin transform-origin($x, $y, $z){
+                                        -webkit-transform-origin:$x $y $z;
+                                        -moz-transform-origin:$x $y $z;
+                                        -o-transform-origin:$x $y $z;
+                                        transform-origin:$x $y $z;
+                                    }
                                 </code>
                             </pre>
                             <h3>The style</h3>
                             <p>If you were to use this styling you would no doubt think the result looked a hideous mess. This is purely the rudimentary styling that enables us to get the desired effect. The styling would need more work to make it look more palatable to the user. The styling for the this demo is a bit more fleshed out. The thing that gives the sliding effect is the CSS3 transform translate3d. It can be used in different ways, as demonstrated by the different examples in the menu.</p>
                             <pre>
                                 <code>
+                                    <span class="comment">//everything should be box sized!</span>
                                     *, *:after, *::before {
                                         @include box-sizing;
                                     }
 
+                                    <span class="comment">//let's make sure everything is the height of the window</span>
+                                    <span class="comment">//as we won't be using these elements for document scrolling</span>
                                     html, body, #container{
                                         height:100%;
                                     }
 
-                                    #container{
-                                        position:relative;
-                                        overflow:hidden;
-                                    }
-
+                                    <span class="comment">//the after psuedo element is used to darken the content when the meny is activated</span>
                                     #wrapper{
                                         position:relative;
                                         height:100%;
-                                        width:96%;
+                                        width:100%;
                                         float:right;
                                         @include transition(0.25s);
 
@@ -143,6 +149,9 @@
                                         }
                                     }
 
+                                    <span class="comment">//the menu by default is transformed out of view</span>
+                                    <span class="comment">//when the menu is closed the content is set to 'MENU', when it's open it is set to 'CLOSE'</span>
+                                    <span class="comment">//the nav bar is positioned outside of it's container so that it is always visible.</span>
                                     #slide-menu{
                                         position:absolute;
                                         top:0;
@@ -190,6 +199,7 @@
                                         }
                                     }
 
+                                    <span class="comment">//the content class will resume the duties of the document scroll</span>
                                     .content{
                                         overflow-y:scroll;
                                         height:100%;

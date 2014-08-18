@@ -116,8 +116,8 @@ pre{
 	z-index:1000;
 	width:200px;
 	height:100%;
-	@include translate3d(-100%,0,0);
 	@include transition(0.25s);
+	@include translate3d(-100%,0,0);
 
 	&.basic-slider{
 		background:$color-darkgreen;
@@ -236,25 +236,7 @@ pre{
 	}
 
 	#slide-menu{
-		&.basic-slider{
-			-webkit-transform: translate3d(0, 0, 0);
-			transform: translate3d(0, 0, 0);
-		}
-		
-		&.push-slider{
-			-webkit-transform: translate3d(0, 0, 0);
-			transform: translate3d(0, 0, 0);
-		}
-
-		&.scale-slider{
-			-webkit-transform: translate3d(0, 0, 0);
-			transform: translate3d(0, 0, 0);
-		}
-
-		&.rotate-slider{
-			-webkit-transform: translate3d(0, 0, 0);
-			transform: translate3d(0, 0, 0);
-		}
+		@include translate3d(0,0,0);
 
 		button::after{
 			content:'CLOSE';

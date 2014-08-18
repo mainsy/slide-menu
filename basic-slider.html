@@ -128,15 +128,11 @@
                                         height:100%;
                                     }
 
-                                    #container{
-                                        position:relative;
-                                        overflow:hidden;
-                                    }
-
+                                    <span class="comment">//the after psuedo element is used to darken the content when the meny is activated</span>
                                     #wrapper{
                                         position:relative;
                                         height:100%;
-                                        width:96%;
+                                        width:100%;
                                         float:right;
                                         @include transition(0.25s);
 
@@ -153,6 +149,9 @@
                                         }
                                     }
 
+                                    <span class="comment">//the menu by default is transformed out of view</span>
+                                    <span class="comment">//when the menu is closed the content is set to 'MENU', when it's open it is set to 'CLOSE'</span>
+                                    <span class="comment">//the nav bar is positioned outside of it's container so that it is always visible.</span>
                                     #slide-menu{
                                         position:absolute;
                                         top:0;
@@ -180,8 +179,7 @@
 
                                     .menu-open{
                                         #wrapper{
-                                            -webkit-transform: translate3d(0, 0, 0);
-                                            transform: translate3d(0, 0, 0);
+                                            @include translate3d(0,0,0);
                                         }
 
                                         #wrapper::after{
@@ -200,6 +198,7 @@
                                         }
                                     }
 
+                                    <span class="comment">//the content class will resume the duties of the document scroll</span>
                                     .content{
                                         overflow-y:scroll;
                                         height:100%;

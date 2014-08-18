@@ -60,7 +60,7 @@ html, body, #container{
 
 .menu-open{
     #wrapper{
-        @include translate3d(-100%,0,0);
+        @include translate3d(260px,0,0);
     }
 
     #wrapper::after{
@@ -77,14 +77,4 @@ html, body, #container{
             content:'CLOSE';
         }
     }
-}
-
-.content{
-    overflow-y:scroll;
-    height:100%;
-}
-
-.inner-content{
-    position:relative;
-    width:100%;
 }
