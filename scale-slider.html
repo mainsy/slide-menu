@@ -128,7 +128,15 @@
                                         height:100%;
                                     }
 
-                                    <span class="comment">//the after psuedo element is used to darken the content when the meny is activated</span>
+                                    <span class="comment">//as there is going to be some x-axis distance manipulation, the perspective needs to be set here</span>
+                                    #container{
+                                        position:relative;
+                                        overflow:hidden;
+                                        -webkit-perspective: 2000px;
+                                        perspective: 2000px;
+                                    }
+
+                                    <span class="comment">//the after psuedo element is used to darken the content when the menu is activated</span>
                                     #wrapper{
                                         position:relative;
                                         height:100%;
@@ -179,8 +187,7 @@
 
                                     .menu-open{
                                         #wrapper{
-                                            -webkit-transform: translate3d(0, 0, 0);
-                                            transform: translate3d(0, 0, 0);
+                                            @include translate3d(100px,0,-800px);
                                         }
 
                                         #wrapper::after{

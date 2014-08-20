@@ -1,0 +1,85 @@
+@import "_base";
+
+*, *:after, *::before {
+    @include box-sizing;
+}
+
+html, body, #container{
+    height:100%;
+}
+
+#container{
+    position:relative;
+    overflow:hidden;
+    -webkit-perspective: 2000px;
+    perspective: 2000px;
+}
+
+#wrapper{
+    position:relative;
+    height:100%;
+    width:96%;
+    float:right;
+    @include transition(0.25s);
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+
+    &:after{
+        position:absolute;
+        top:0;
+        right:0;
+        width:0;
+        height:0;
+        background:rgba(0,0,0,0.4);
+        content:'';
+        opacity:0;
+        @include opacity-transition(0.25s);
+    }
+}
+
+#slide-menu{
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:1000;
+    width:200px;
+    height:100%;
+    background:#FFF;
+    @include transition(0.25s);
+    @include translate3d(-100%,0,0);
+
+    button::after{
+        content:'MENU';
+    }
+
+    .nav-bar{
+        width:60px;
+        height:100%;
+        position:absolute;
+        top:0;
+        right:-60px;
+        background:#FFF;
+    }
+}
+
+.menu-open{
+    #wrapper{
+        -webkit-transform: translate3d(100px, 0, -200px) rotateY(-35deg);
+        transform: translate3d(100px, 0, -200px) rotateY(-35deg);
+    }
+
+    #wrapper::after{
+        width:100%;
+        height:100%;
+        opacity: 1;
+    }
+
+    #slide-menu{
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+
+        button::after{
+            content:'CLOSE';
+        }
+    }
+}
