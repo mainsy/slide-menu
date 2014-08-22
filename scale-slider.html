@@ -137,12 +137,16 @@
                                     }
 
                                     <span class="comment">//the after psuedo element is used to darken the content when the menu is activated</span>
+                                    <span class="comment">//The transform style needs to be set to preserve its 3D position</span>
+                                    <span class="comment">//this will allow the element to fall into the background</span>
                                     #wrapper{
                                         position:relative;
                                         height:100%;
                                         width:100%;
                                         float:right;
                                         @include transition(0.25s);
+                                        -webkit-transform-style: preserve-3d;
+                                        transform-style: preserve-3d;
 
                                         &:after{
                                             position:absolute;
@@ -185,6 +189,7 @@
                                         }
                                     }
 
+                                    <span class="comment">//when the menu is open the site wrapper will fall backwards</span>
                                     .menu-open{
                                         #wrapper{
                                             @include translate3d(100px,0,-800px);

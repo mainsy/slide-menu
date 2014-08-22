@@ -128,13 +128,25 @@
                                         height:100%;
                                     }
 
-                                    <span class="comment">//the after psuedo element is used to darken the content when the meny is activated</span>
+                                    <span class="comment">//as there is going to be some x-axis distance manipulation, the perspective needs to be set here</span>
+                                    #container{
+                                        position:relative;
+                                        overflow:hidden;
+                                        -webkit-perspective: 2000px;
+                                        perspective: 2000px;
+                                    }
+
+                                    <span class="comment">//the after psuedo element is used to darken the content when the menu is activated</span>
+                                    <span class="comment">//The transform style needs to be set to preserve its 3D position</span>
+                                    <span class="comment">//this will allow the element to fall into the background</span>
                                     #wrapper{
                                         position:relative;
                                         height:100%;
                                         width:100%;
                                         float:right;
                                         @include transition(0.25s);
+                                        -webkit-transform-style: preserve-3d;
+                                        transform-style: preserve-3d;
 
                                         &:after{
                                             position:absolute;
@@ -177,10 +189,11 @@
                                         }
                                     }
 
+                                    <span class="comment">//when the menu is open the site wrapper will transform by rotating across the y axis</span>
                                     .menu-open{
                                         #wrapper{
-                                            -webkit-transform: translate3d(0, 0, 0);
-                                            transform: translate3d(0, 0, 0);
+                                            -webkit-transform: translate3d(100px, 0, -200px) rotateY(-35deg);
+                                            transform: translate3d(100px, 0, -200px) rotateY(-35deg);
                                         }
 
                                         #wrapper::after{
